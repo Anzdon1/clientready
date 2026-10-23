@@ -5,6 +5,7 @@ body_class: lp
 signup_heading: See every page's status at a glance.
 signup_sub: We are building the first version. Leave your email and we will send one message when you can track your own event or club pages with it.
 ---
+<div class="shell">
 <section class="lp-hero">
   <div>
     <p class="eyebrow">Keeping an event or club page current</p>
@@ -14,24 +15,26 @@ signup_sub: We are building the first version. Leave your email and we will send
       <a class="button" href="#signup">Request early access</a>
     </div>
   </div>
+  <div class="note-card">
   <div class="source">
     <p>“The tool you're describing might make it easier for me to see what's missing. But if the other person doesn't reply, it feels like I'd still have to chase them.”</p>
     <cite>A student who updates a student organization's event page. From our interviews, translated.</cite>
   </div>
+  </div>
 </section>
 
 <section class="section" aria-labelledby="ba-title">
-  <div class="section-head"><h2 id="ba-title">Status in words, not colors</h2><span>An invented example for a club event page</span></div>
-  <div class="workbench" style="grid-template-columns:1fr 1fr;align-items:start">
+  <div class="section-head"><h2 id="ba-title">Status in words, not colors</h2></div>
+  <div class="status-demo">
     <article class="paper column">
-      <div class="col-top"><span class="step">→</span><h3>Events / Fall talk</h3></div>
-      <div class="output"><h4>TITLE AND DATE</h4><p>“Designing for small screens” · Thursday, November 12.</p><span class="status">Confirmed by organizer</span></div>
-      <div class="output"><h4>SPEAKER BIO</h4><p>Speaker has not sent it yet.</p><span class="status missing">Missing · waiting on speaker · you follow up</span></div>
-      <div class="output"><h4>ROOM</h4><p>Room request submitted; no reply from facilities.</p><span class="status missing">Needs a decision · not ours to make</span></div>
-      <div class="output"><h4>POSTER</h4><p>poster-2025.png is in the folder.</p><span class="status missing">Last year's file · check before using</span></div>
+      <div class="col-top"><h3>Events page, fall talk</h3></div>
+      <div class="output"><h4>Title and date</h4><p>“Designing for small screens”, Thursday, November 12.</p><span class="status">Confirmed by organizer</span></div>
+      <div class="output"><h4>Speaker bio</h4><p>Speaker has not sent it yet.</p><span class="status missing">Missing, waiting on the speaker</span></div>
+      <div class="output"><h4>Room</h4><p>Room request submitted; no reply from facilities.</p><span class="status missing">Needs a decision, not ours</span></div>
+      <div class="output"><h4>Poster</h4><p>poster-2025.png is in the folder.</p><span class="status missing">Last year's file, check first</span></div>
     </article>
     <article class="paper column">
-      <div class="col-top"><span class="step">✓</span><h3>What you send instead</h3></div>
+      <div class="col-top"><h3>What you send instead</h3></div>
       <p class="label">One message, to one person</p>
       <div class="source"><p>“Hi Dana — for the event page I need two things from you: a two-sentence bio, and whether we should list the room as TBD or wait. Everything else is in.”</p></div>
       <p class="small-note">That is the whole point. Not more reminders — one message that names exactly what is missing and who can close it.</p>
@@ -57,3 +60,4 @@ signup_sub: We are building the first version. Leave your email and we will send
 </section>
 
 {{partial_signup}}
+</div>
