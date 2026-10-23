@@ -27,7 +27,7 @@ Configuration is by environment variable; nothing needs a rebuild.
 
 | Variable | What it is | Default |
 |---|---|---|
-| `GA_MEASUREMENT_ID` | Google Analytics 4 measurement id (`G-…`) | placeholder `G-XXXXXXXXXX` |
+| `GA_MEASUREMENT_ID` | Google Analytics 4 measurement id | `G-VZ595XF2ME` (the ClientReady property) |
 | `FORMSPREE_FORM_ID` | the id in `https://formspree.io/f/<id>` | the team form |
 | `SITE_URL` | public origin, used for canonical and OG tags | `https://clientready.cc` |
 | `PORT` | set by Railway | `3000` |

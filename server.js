@@ -19,14 +19,14 @@ const PAGES_DIR = path.join(SRC, "pages");
 const PUBLIC = path.join(ROOT, "public");
 
 const config = {
-  gaId: process.env.GA_MEASUREMENT_ID || "G-XXXXXXXXXX",
+  gaId: process.env.GA_MEASUREMENT_ID || "G-VZ595XF2ME",
   formspreeId: process.env.FORMSPREE_FORM_ID || "xbggrvoo",
   siteUrl: (process.env.SITE_URL || "https://clientready.cc").replace(/\/$/, ""),
   port: Number(process.env.PORT) || 3000,
 };
 
-if (config.gaId === "G-XXXXXXXXXX") {
-  console.warn("GA_MEASUREMENT_ID is not set; pages carry a placeholder tag id.");
+if (!/^G-[A-Z0-9]{8,12}$/.test(config.gaId)) {
+  console.warn("GA_MEASUREMENT_ID looks wrong; check the Google tag id.");
 }
 if (!/^[a-z0-9]{8}$/i.test(config.formspreeId)) {
   console.warn("FORMSPREE_FORM_ID looks wrong; the signup form may not deliver.");
