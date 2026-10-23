@@ -52,6 +52,16 @@ function fill(template, vars) {
   );
 }
 
+// Short content hash of the stylesheet and script, appended to their URLs so
+// browsers and the CDN pick up a new version on every deploy.
+const crypto = require("crypto");
+const assetVersion = crypto
+  .createHash("sha1")
+  .update(fs.readFileSync(path.join(PUBLIC, "assets", "site.css")))
+  .update(fs.readFileSync(path.join(PUBLIC, "assets", "site.js")))
+  .digest("hex")
+  .slice(0, 8);
+
 const layout = fs.readFileSync(path.join(SRC, "layout.html"), "utf8");
 const partials = {};
 for (const f of fs.readdirSync(path.join(SRC, "partials"))) {
@@ -64,6 +74,7 @@ function renderPage(file) {
   const slug = meta.slug !== undefined ? meta.slug : path.basename(file, ".html");
   const route = slug === "index" ? "/" : `/${slug}`;
   const vars = {
+    asset_v: assetVersion,
     ga_id: config.gaId,
     formspree_id: config.formspreeId,
     site_url: config.siteUrl,
