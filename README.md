@@ -20,7 +20,7 @@ Live: https://clientready.cc
 npm install
 npm start            # http://localhost:3000
 npm run check        # renders every page and checks tag, form, placeholders
-npm run export       # writes a static copy to dist/ (optional)
+npm run export       # writes the static site to dist/ (what Cloudflare Pages deploys)
 ```
 
 Configuration is by environment variable; nothing needs a rebuild.
@@ -35,7 +35,7 @@ Configuration is by environment variable; nothing needs a rebuild.
 ## How it is built
 
 - `server.js` renders `src/pages/*.html` into `src/layout.html` once at startup and serves them with Express. Each page starts with a small front-matter block (title, description, signup copy). Shared pieces live in `src/partials/`.
-- `public/assets/site.css` implements `docs/style_guide.md`: the warm palette, Georgia headings, Arial body, flat colors, 44 px controls, visible focus.
+- `public/assets/site.css` implements the palette and rules in `docs/style_guide.md` (flat colors, one accent for the action, 44 px controls, visible focus). Type is Newsreader for headings and Inter for body, loaded from Google Fonts with Georgia and Arial as fallbacks; this is a deliberate change from the HW4 preview. The hero's page plan animates once on load, two sheets settling into alignment, and stays still when the visitor prefers reduced motion.
 - `public/assets/site.js` submits the form to Formspree with `fetch`, then sends the visitor to `/thanks?from=<page>`. It also copies `utm_*` values from the arrival URL into hidden fields (and keeps the first set for the tab session) so each signup email says which page and which post it came from.
 - Google's tag is in `<head>` on every page. The thank-you page fires `gtag('event', 'signup', {...})`; that event is marked a key event in the GA4 property.
 
