@@ -1,0 +1,24 @@
+<section class="signup-block" id="signup" aria-labelledby="signup-title-{{page_key}}">
+  <div class="signup-copy">
+    <p class="eyebrow">Early access</p>
+    <h2 id="signup-title-{{page_key}}">{{signup_heading}}</h2>
+    <p class="signup-sub">{{signup_sub}}</p>
+  </div>
+  <form class="signup" action="https://formspree.io/f/{{formspree_id}}" method="POST" data-signup data-page="{{page_key}}" novalidate>
+    <label class="field">
+      <span class="field-label">Email</span>
+      <input type="email" name="email" required autocomplete="email" inputmode="email" placeholder="you@example.com">
+    </label>
+    <input type="hidden" name="page" value="{{page_key}}">
+    <input type="hidden" name="_subject" value="ClientReady signup · {{page_key}}">
+    <input type="hidden" name="utm_source" value="">
+    <input type="hidden" name="utm_medium" value="">
+    <input type="hidden" name="utm_campaign" value="">
+    <input type="hidden" name="utm_content" value="">
+    <input type="hidden" name="referrer" value="">
+    <div class="gotcha" aria-hidden="true"><label>Leave this empty <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
+    <button class="button" type="submit">Request early access</button>
+    <p class="form-status" role="status" aria-live="polite"></p>
+    <p class="form-fineprint">One email when the first guided brief is ready to try. No newsletter unless you ask. <a href="/privacy">Privacy</a></p>
+  </form>
+</section>

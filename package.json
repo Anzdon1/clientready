@@ -1,0 +1,19 @@
+{
+  "name": "clientready-site",
+  "version": "0.1.0",
+  "private": true,
+  "description": "ClientReady marketing pages: homepage, landing pages, signup and thank-you page.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "export": "node server.js --export dist",
+    "check": "node scripts/check_pages.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
